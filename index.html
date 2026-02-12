@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Propuesta de San Valentín 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Corazones de fondo -->
+    <div class="heart-bg" style="top: 10%; left: 10%;">💖</div>
+    <div class="heart-bg" style="top: 20%; right: 15%; animation-delay: 1s;">💕</div>
+    <div class="heart-bg" style="bottom: 15%; left: 20%; animation-delay: 2s;">💗</div>
+    <div class="heart-bg" style="bottom: 25%; right: 10%; animation-delay: 3s;">💝</div>
+    <div class="heart-bg" style="top: 50%; left: 5%; animation-delay: 1.5s;">💓</div>
+    <div class="heart-bg" style="top: 60%; right: 8%; animation-delay: 2.5s;">💞</div>
+    <div class="heart-bg" style="top: 35%; left: 50%; animation-delay: 0.5s;">❤️</div>
+    <div class="heart-bg" style="bottom: 40%; right: 30%; animation-delay: 4s;">💘</div>
+
+    <!-- Burbujas románticas -->
+    <div class="bubble" style="width: 80px; height: 80px; bottom: -100px; left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="width: 60px; height: 60px; bottom: -100px; left: 30%; animation-delay: 2s;"></div>
+    <div class="bubble" style="width: 100px; height: 100px; bottom: -100px; right: 20%; animation-delay: 4s;"></div>
+    <div class="bubble" style="width: 70px; height: 70px; bottom: -100px; right: 40%; animation-delay: 6s;"></div>
+
+    <!-- Partículas brillantes -->
+    <div class="particle" style="width: 4px; height: 4px; top: 20%; left: 25%; animation-delay: 0.5s;"></div>
+    <div class="particle" style="width: 3px; height: 3px; top: 40%; right: 30%; animation-delay: 1.2s;"></div>
+    <div class="particle" style="width: 5px; height: 5px; bottom: 30%; left: 35%; animation-delay: 2s;"></div>
+    <div class="particle" style="width: 4px; height: 4px; top: 60%; right: 20%; animation-delay: 1.8s;"></div>
+
+    <div class="container">
+        <div class="contenido-inicial" id="contenidoInicial">
+            <h1>✨ Mi Amor Eterno ✨</h1>
+            <div class="emoji">😍</div>
+            <p class="question" id="pregunta">¿Quieres ser mi San Valentín y hacer de este día el más especial de nuestras vidas? 💕</p>
+            <div class="buttons" id="botonesContainer">
+                <button id="btnSi" onclick="aceptar()">¡SÍ, MI AMOR! 💕</button>
+                <button id="btnNo" onclick="rechazar()">No...</button>
+            </div>
+        </div>
+
+        <div class="mensaje-si" id="mensajeSi">
+            <div class="emoji">🥰</div>
+            <h2>¡Sabía que tu corazón diría que sí!</h2>
+            <p>Has hecho de este momento algo mágico e inolvidable 💖</p>
+            <p class="mensaje-adicional">¡No puedo esperar para celebrar nuestro amor!</p>
+            <div class="fecha">
+                ✨ Tenemos que cuadrar nuestra fecha especial ✨
+            </div>
+            <div class="emoji" style="margin-top: 25px;">💑</div>
+            <p style="font-size: 1.2em; margin-top: 20px; color: #ff6b9d;">¡Será un día lleno de amor y felicidad! 🌹</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
