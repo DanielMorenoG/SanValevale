@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Propuesta de San Valentín 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Corazones flotantes en el fondo */
+        .heart-bg {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* Contenedor principal */
+        .container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin: 20px 0;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.2); }
+            20%, 40% { transform: scale(1.1); }
+        }
+
+        .question {
+            font-size: 1.8em;
+            color: #333;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            min-height: 150px;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #btnSi {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            animation: glow 2s infinite;
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(245, 87, 108, 0.8); }
+        }
+
+        #btnSi:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(245, 87, 108, 0.6);
+        }
+
+        #btnNo {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #666;
+        }
+
+        #btnNo:hover {
+            background: linear-gradient(135deg, #fed6e3 0%, #a8edea 100%);
+        }
+
+        /* Mensaje de aceptación */
+        .mensaje-si {
+            display: none;
+            animation: aparece 0.8s ease-out;
+        }
+
+        @keyframes aparece {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .mensaje-si h2 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        .mensaje-si p {
+            font-size: 1.5em;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .fecha {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        /* Confeti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            position: absolute;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Estrellas brillantes */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazones de fondo -->
+    <div class="heart-bg" style="top: 10%; left: 10%;">💖</div>
+    <div class="heart-bg" style="top: 20%; right: 15%; animation-delay: 1s;">💕</div>
+    <div class="heart-bg" style="bottom: 15%; left: 20%; animation-delay: 2s;">💗</div>
+    <div class="heart-bg" style="bottom: 25%; right: 10%; animation-delay: 3s;">💝</div>
+    <div class="heart-bg" style="top: 50%; left: 5%; animation-delay: 1.5s;">💓</div>
+    <div class="heart-bg" style="top: 60%; right: 8%; animation-delay: 2.5s;">💞</div>
+
+    <!-- Estrellas brillantes -->
+    <div class="sparkle" style="top: 15%; left: 30%; animation-delay: 0.5s;"></div>
+    <div class="sparkle" style="top: 40%; right: 25%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="bottom: 30%; left: 40%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="bottom: 20%; right: 35%; animation-delay: 2s;"></div>
+
+    <div class="container">
+        <div class="contenido-inicial" id="contenidoInicial">
+            <h1>💝 San Valentín 💝</h1>
+            <div class="emoji">😍</div>
+            <p class="question">¿Quieres ser mi San Valentín?</p>
+            <div class="buttons">
+                <button id="btnSi" onclick="aceptar()">SÍ 💕</button>
+                <button id="btnNo" onclick="rechazar()">No</button>
+            </div>
+        </div>
+
+        <div class="mensaje-si" id="mensajeSi">
+            <div class="emoji">🥰</div>
+            <h2>¡Sabía que dirías que sí!</h2>
+            <p>¡Muchas gracias! 💖</p>
+            <div class="fecha">
+                📅 Tenemos una cita el 14 de Febrero 📅
+            </div>
+            <div class="emoji" style="margin-top: 20px;">💑</div>
+        </div>
+    </div>
+
+    <script>
+        let tamanoNo = 1;
+        let tamanoSi = 1;
+
+        function rechazar() {
+            const btnNo = document.getElementById('btnNo');
+            const btnSi = document.getElementById('btnSi');
+            
+            // Aumentar MUCHO más el tamaño del botón SÍ
+            tamanoSi += 0.5;
+            btnSi.style.transform = `scale(${tamanoSi})`;
+            
+            // Agregar efecto de sacudida al botón NO
+            btnNo.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                btnNo.style.animation = 'none';
+            }, 500);
+        }
+
+        function aceptar() {
+            // Ocultar contenido inicial
+            document.getElementById('contenidoInicial').style.display = 'none';
+            
+            // Mostrar mensaje de aceptación
+            const mensajeSi = document.getElementById('mensajeSi');
+            mensajeSi.style.display = 'block';
+            
+            // Crear confeti
+            crearConfeti();
+        }
+
+        function crearConfeti() {
+            const colores = ['#ff6b6b', '#ff69b4', '#ffd93d', '#6bcf7f', '#4ecdc4', '#a8e6cf'];
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 30);
+            }
+        }
+
+        // Agregar animación de sacudida
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0) scale(${tamanoNo}); }
+                25% { transform: translateX(-10px) scale(${tamanoNo}); }
+                75% { transform: translateX(10px) scale(${tamanoNo}); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
